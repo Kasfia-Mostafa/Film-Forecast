@@ -2,6 +2,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Hooks/AuthProvider";
 import { Link } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+
+
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -22,6 +26,9 @@ const Login = () => {
     })
 
   };
+
+  const notification = () => toast("Successfully register");
+
 
   return (
     <div className="bg-teal-900 font-kalam h-[110vh]">
@@ -53,7 +60,19 @@ const Login = () => {
           />
         </div>
         <div className="form-control mt-6">
-          <button  className="btn btn-neutral">Login</button>
+          <button onClick={notification}  className="btn btn-neutral">Login</button>
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </div>
       </form>
       <p className="text-white text-center text-xl p-2">Don't have an account ? <Link to='/register' className="text-teal-500 font-bold">Register</Link></p>

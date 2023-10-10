@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Hooks/AuthProvider";
 import { Navigate } from "react-router-dom";
 
-const PrivetRoute = () => {
+const PrivetRoute = ({children}) => {
   const {user,loading} = useContext(AuthContext);
 
   if(loading){
