@@ -14,6 +14,8 @@ import EventHandling from "../Components/Home/EventHeld/EventHandling;/EventHand
 import Login from "../Components/Login/Login";
 import Registration from "../Components/Registration/Registration";
 import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
+import SectionOne from "../Components/Home/sectionOne/sectionOne";
+import SectionTwo from "../Components/Home/SectionTwo/SectionTwo";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<EventHandling></EventHandling>
+      },
+      {
+        path:'/',
+        element:<SectionOne></SectionOne>
+      },
+      {
+        path:'/',
+        element:<SectionTwo></SectionTwo>
       },
       {
         path:'/gallery',
