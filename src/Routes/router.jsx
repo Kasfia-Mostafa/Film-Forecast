@@ -7,12 +7,13 @@ import FilmPremier from "../Components/Events/Premier/FilmPremier";
 import Submission from "../Components/Events/Submission/Submission.jsx";
 import FilmAndFun from "../Components/Events/FIlmAndFun/FilmAndFun";
 import ConvocationEvent from "../Components/Events/Convocation/ConvocationEvent";
-import Scholarships from "../Components/Events/Sholarships/Scholarships";
+import Scholarships from "../Components/Events/Scholarships/Scholarships";
 import Cinematography from "../Components/Events/Cinematography/Cinematography";
 import Footer from "../Components/Home/Footer/Footer";
 import EventHandling from "../Components/Home/EventHeld/EventHandling;/EventHandling;";
 import Login from "../Components/Login/Login";
 import Registration from "../Components/Registration/Registration";
+import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/premier',
-        element:<FilmPremier></FilmPremier>
+        element:<PrivetRoute><FilmPremier></FilmPremier></PrivetRoute>
       },
       {
         path:'/convocation',
@@ -45,11 +46,11 @@ const router = createBrowserRouter([
       },
       {
         path:'/submission',
-        element:<Submission></Submission>
+        element:<PrivetRoute><Submission></Submission></PrivetRoute>
       },
       {
         path:'/fnf',
-        element:<FilmAndFun></FilmAndFun>
+        element:<PrivetRoute><FilmAndFun></FilmAndFun></PrivetRoute>
       },
       {
         path:'/scholarships',

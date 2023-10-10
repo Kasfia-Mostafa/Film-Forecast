@@ -5,7 +5,13 @@ import { AuthContext } from "../../../Hooks/AuthProvider";
 
 
 const Navbar = () => {
-  const {user} = useContext(AuthContext)
+  const {user,logOut} = useContext(AuthContext)
+
+  const handleSignOut = () =>{
+    logOut()
+    .then()
+    .catch()
+  } 
 
 const navLinks = <>
 <li><NavLink to='/' className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "text-[#81b29a]" : ""}>Home</NavLink></li>
@@ -51,7 +57,7 @@ const event = <>
   <div className="navbar-end">
     {
       user ? 
-      <button className="btn btn-ghost text-white">Sign Out</button>
+      <button onClick={handleSignOut} className="btn btn-ghost text-white">Sign Out</button>
       :
     <Link to='/login' className="btn btn-ghost text-white">Login</Link>
     }

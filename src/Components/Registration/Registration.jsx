@@ -6,7 +6,7 @@ const Registration = () => {
   const {createUser} = useContext(AuthContext)
 
   const handleRegister = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
 
