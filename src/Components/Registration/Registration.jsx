@@ -7,6 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 const Registration = () => {
   const { createUser } = useContext(AuthContext);
 
+  
+
   const handleRegister = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -27,6 +29,7 @@ const Registration = () => {
       });
   };
 
+  
   const notify = () => toast("Successfully register");
 
   return (
@@ -103,6 +106,15 @@ const Registration = () => {
             theme="dark"
           />
         </div>
+        {/* <div className="form-control mt-6">
+          <button
+            onClickCapture={handleGoogleRegister}
+            className="btn btn-neutral"
+            onClick={notify}
+          >
+            Google
+          </button>
+        </div> */}
       </form>
       <p className="text-white text-center text-xl p-2">
         Already have an account ?{" "}

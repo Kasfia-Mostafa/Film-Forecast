@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn,googleSignIn } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -25,6 +25,11 @@ const Login = () => {
       console.error(error)
     })
 
+  };
+  const handleGoogleRegister = () => {
+    googleSignIn().then((result) => {
+      console.log(result.user);
+    });
   };
 
   const notification = () => toast("Successfully register");
@@ -73,6 +78,9 @@ const Login = () => {
             pauseOnHover
             theme="dark"
           />
+        </div>
+        <div className="form-control mt-6">
+          <button onClick={handleGoogleRegister}  className="btn btn-neutral">Google</button>
         </div>
       </form>
       <p className="text-white text-center text-xl p-2">Don't have an account ? <Link to='/register' className="text-teal-500 font-bold">Register</Link></p>
