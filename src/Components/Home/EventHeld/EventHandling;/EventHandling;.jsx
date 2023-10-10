@@ -7,7 +7,7 @@ const EventHandling = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("/public/eventHeld.json")
+    fetch("/eventHeld.json")
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);

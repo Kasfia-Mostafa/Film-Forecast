@@ -11,6 +11,8 @@ import Scholarships from "../Components/Events/Sholarships/Scholarships";
 import Cinematography from "../Components/Events/Cinematography/Cinematography";
 import Footer from "../Components/Home/Footer/Footer";
 import EventHandling from "../Components/Home/EventHeld/EventHandling;/EventHandling;";
+import Login from "../Components/Login/Login";
+import Registration from "../Components/Registration/Registration";
 
 const router = createBrowserRouter([
   {
@@ -50,7 +52,7 @@ const router = createBrowserRouter([
         element:<FilmAndFun></FilmAndFun>
       },
       {
-        path:'/sholarships',
+        path:'/scholarships',
         element:<Scholarships></Scholarships>
       },
       {
@@ -60,6 +62,14 @@ const router = createBrowserRouter([
       {
         path:'/home',
         element:<Footer></Footer>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element:<Registration></Registration>
       },
     ]
   },

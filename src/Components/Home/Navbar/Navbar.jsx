@@ -1,8 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { GiFilmSpool } from 'react-icons/gi';
+import { useContext } from "react";
+import { AuthContext } from "../../../Hooks/AuthProvider";
 
 
 const Navbar = () => {
+  const {user} = useContext(AuthContext)
 
 const navLinks = <>
 <li><NavLink to='/' className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "text-[#81b29a]" : ""}>Home</NavLink></li>
@@ -12,7 +15,7 @@ const navLinks = <>
 
 const event = <>
 <li><NavLink to='/convocation'>Convocation</NavLink></li>
-<li><NavLink to='/sholarships'>Sholarships</NavLink></li>
+<li><NavLink to='/scholarships'>Scholarships</NavLink></li>
 <li><NavLink to='/cinematography'>Cinematography</NavLink></li>
 <li><NavLink to='/premier'>Film Premier</NavLink></li>
 <li><NavLink to='/submission'>Film Submission</NavLink></li>
@@ -46,7 +49,12 @@ const event = <>
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn btn-ghost text-white">Login</a>
+    {
+      user ? 
+      <button className="btn btn-ghost text-white">Sign Out</button>
+      :
+    <Link to='/login' className="btn btn-ghost text-white">Login</Link>
+    }
   </div>
 </div>
     </div>
