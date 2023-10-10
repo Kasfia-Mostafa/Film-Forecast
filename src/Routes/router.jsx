@@ -16,11 +16,13 @@ import Registration from "../Components/Registration/Registration";
 import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
 import SectionOne from "../Components/Home/sectionOne/sectionOne";
 import SectionTwo from "../Components/Home/SectionTwo/SectionTwo";
+import Error from "../Components/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:'/',
