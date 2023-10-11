@@ -9,7 +9,7 @@ const Banner = () => {
   return (
     <div>
       <img
-        className="w-full h-full"
+        className="w-[120vw] lg:w-full h-full"
         src="https://i.ibb.co/1QfC7yq/film-projector-dark-background-close-up-old-retro-things-shoot-with-vintage-style-colors-toned.jpg"
         alt=""
       />
@@ -17,7 +17,7 @@ const Banner = () => {
         <p
           data-aos="fade-left"
           data-aos-anchor-placement="top-bottom"
-          className="text-right text-white text-9xl absolute right-9 bottom-96 mb-32 font-lobster"
+          className="text-right text-white text-4xl right-4 bottom-1 lg:text-9xl absolute lg:right-9 lg:bottom-96 mb-32 font-lobster"
         >
           Film <br /> Forecast
         </p>

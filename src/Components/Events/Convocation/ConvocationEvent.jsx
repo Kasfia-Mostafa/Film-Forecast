@@ -5,7 +5,7 @@ const ConvocationEvent = () => {
   const [guests, setGuests] = useState([]);
 
   useEffect(() => {
-    fetch("/public/guests.json")
+    fetch("guests.json")
       .then((res) => res.json())
       .then((data) => setGuests(data));
   }, []);

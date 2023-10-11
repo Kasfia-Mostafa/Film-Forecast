@@ -17,7 +17,7 @@ const SectionOne = () => {
         <p
           data-aos="fade-down-right"
           data-aos-anchor-placement="top-bottom"
-          className="text-right text-stone-800 text-7xl absolute right-9 bottom-52 mb-32 font-lobster"
+          className="text-right text-white bg-stone-800 m-10 text-5xl lg:text-7xl absolute right-9 bottom-7 lg:bottom-52 mb-32 font-lobster"
         >
           Start Your journey from <br />Film Forecast
         </p>

@@ -23,7 +23,7 @@ const EventHandling = () => {
           Main Events
         </h2>
         {
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid lg:grid-cols-2 gap-10">
             {events?.map((event) => (
               <EventHeld key={event.id} event={event}></EventHeld>
             ))}
