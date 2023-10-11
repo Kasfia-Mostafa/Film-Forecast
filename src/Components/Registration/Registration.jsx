@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Hooks/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,7 +7,9 @@ import "react-toastify/dist/ReactToastify.css";
 const Registration = () => {
   const { createUser } = useContext(AuthContext);
 
-  
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -18,18 +20,31 @@ const Registration = () => {
     const photo = form.get("photo");
     const email = form.get("email");
     const password = form.get("password");
-    console.log(name, photo, email.password);
+    console.log(name, photo, email, password);
 
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
+      
+
+    if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z]).{6,}$/.test(password)) {
+      setError(
+        "Minimum six characters, one special character and and a capital letter"
+      );
+    } else {
+      setError("");
+      if (email) {
+        createUser(email, password).then((result) => {
+          console.log(result.user);
+        });
+      }
+    }
   };
 
-  
   const notify = () => toast("Successfully register");
 
   return (
@@ -37,6 +52,7 @@ const Registration = () => {
       <p className="text-5xl font-bold text-center text-white p-10">
         Registration
       </p>
+      <p className="text-white text-center p-4">{error}</p>
       <form
         onSubmit={handleRegister}
         className="border shadow-lg bg-white rounded-lg max-w-xl mx-auto p-10"
@@ -89,8 +105,8 @@ const Registration = () => {
             required
           />
         </div>
-        <div className="form-control mt-6">
-          <button className="btn btn-neutral" onClick={notify}>
+        <div className="form-control mt-6"  onClick={notify}>
+          <button className="btn btn-neutral">
             Register
           </button>
           <ToastContainer
