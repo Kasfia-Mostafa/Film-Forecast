@@ -5,7 +5,7 @@ const FilmPremier = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch("/public/premiers.json")
+    fetch("premiers.json")
       .then((res) => res.json())
       .then((data) => setMovies(data));
   }, []);
